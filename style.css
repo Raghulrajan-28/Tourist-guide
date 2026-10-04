@@ -1,0 +1,473 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #202020;
+  background: #f6f8fb;
+}
+
+.topbar {
+  height: 44px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  color: #202020;
+  font-size: 19px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #008f83;
+}
+
+.hero {
+  height: 309px;
+  background: #00584f;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.hero-inner {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  margin: 0 0 16px;
+  font-size: 27px;
+  line-height: 1.08;
+  font-weight: 700;
+}
+
+.hero p {
+  margin: 0 0 25px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #f1f7f6;
+}
+
+.orange-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 114px;
+  height: 35px;
+  border-radius: 5px;
+  background: #ff9800;
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.booking-page {
+  min-height: 1130px;
+  padding: 43px 20px 42px;
+  background: #f5f7fa;
+}
+
+.booking-page > h2 {
+  text-align: center;
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.05;
+}
+
+.subtitle {
+  text-align: center;
+  margin: 11px 0 25px;
+  color: #858585;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.booking-card {
+  width: 100%;
+  max-width: 249px;
+  margin: 0 auto;
+  padding: 15px 15px 17px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 19px rgba(0, 0, 0, .09);
+}
+
+.booking-card h3 {
+  margin: 0 0 13px;
+  font-size: 13px;
+}
+
+.booking-card label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.booking-card input[type="text"],
+.booking-card input[type="tel"],
+.booking-card input[type="date"] {
+  width: 100%;
+  height: 35px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  padding: 0 10px;
+  margin-bottom: 11px;
+  font-size: 11px;
+  outline: none;
+  color: #333;
+  background: #fff;
+}
+
+.booking-card input::placeholder {
+  color: #999;
+}
+
+.slot-heading {
+  margin-top: 16px !important;
+  margin-bottom: 13px !important;
+}
+
+.slot-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 156px;
+  padding: 13px 14px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 9px;
+  background: white;
+  cursor: pointer;
+  text-align: left;
+}
+
+.slot-card.selected {
+  border: 2px solid #008f83;
+  background: #f2fffd;
+}
+
+.slot-card strong {
+  color: #008f83;
+  font-size: 12px;
+  margin-bottom: 7px;
+}
+
+.slot-card span {
+  font-size: 10px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.slot-card b {
+  color: #009b8c;
+  font-size: 20px;
+  margin-top: 3px;
+}
+
+.slot-card small {
+  color: #888;
+  font-size: 8px;
+  margin-top: -1px;
+}
+
+.people-row {
+  margin-top: 13px;
+}
+
+.people-row > label {
+  margin-bottom: 10px;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  margin-bottom: 20px;
+}
+
+.counter button {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 50%;
+  background: #009b8c;
+  color: white;
+  font-size: 21px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.counter span {
+  font-size: 14px;
+  min-width: 7px;
+  text-align: center;
+}
+
+.summary {
+  background: #f8f9fb;
+  border-radius: 7px;
+  padding: 16px 17px 16px;
+}
+
+.summary h3 {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.summary > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.summary > div span {
+  color: #555;
+}
+
+.summary > div strong {
+  color: #222;
+  font-weight: 700;
+}
+
+.summary .total {
+  border: 0;
+  padding-bottom: 4px;
+  margin-bottom: 9px;
+  font-size: 14px;
+}
+
+.summary .total span,
+.summary .total strong {
+  color: #008f83;
+}
+
+.confirm {
+  width: 100%;
+  height: 38px;
+  border: 0;
+  border-radius: 6px;
+  background: #009688;
+  color: white;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.confirm:hover,
+.submit-review:hover {
+  background: #007f74;
+}
+
+/* Reviews page */
+.reviews-page {
+  background: #effbfa;
+  min-height: 100vh;
+}
+
+.reviews-intro {
+  padding: 82px 20px 46px;
+  text-align: center;
+}
+
+.reviews-intro h1 {
+  margin: 0 0 12px;
+  font-size: 31px;
+}
+
+.reviews-intro p {
+  margin: 0;
+  color: #777;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.review-form,
+.review-card {
+  width: calc(100% - 64px);
+  max-width: 365px;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  border-radius: 13px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, .07);
+}
+
+.review-form {
+  padding: 34px 34px 35px;
+}
+
+.review-form h2 {
+  margin: 0 0 26px;
+  font-size: 22px;
+}
+
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  border: 1px solid #d7d7d7;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 13px 15px;
+  outline: none;
+}
+
+.review-form input {
+  height: 54px;
+}
+
+.review-form textarea {
+  height: 140px;
+  resize: vertical;
+  margin-bottom: 18px;
+}
+
+.stars {
+  display: flex;
+  gap: 7px;
+  margin: 25px 0 28px;
+}
+
+.stars button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: #d5d5d5;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.stars button.selected {
+  color: #ffc400;
+}
+
+.submit-review {
+  width: 100%;
+  height: 52px;
+  border: 0;
+  border-radius: 8px;
+  background: #009b8c;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.reviews-list {
+  padding: 45px 0 78px;
+}
+
+.review-card {
+  padding: 26px 26px 25px;
+  margin-bottom: 23px;
+}
+
+.review-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.review-head strong {
+  font-size: 18px;
+}
+
+.review-head span {
+  color: #ffc400;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+.review-card p {
+  color: #707070;
+  font-size: 18px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.about {
+  background: white;
+  text-align: center;
+  padding: 72px 20px 90px;
+}
+
+.about h2 {
+  font-size: 27px;
+  margin: 0 0 25px;
+}
+
+.about p {
+  margin: 0 0 8px;
+  color: #737373;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+@media (min-width: 700px) {
+  .topbar {
+    height: 70px;
+    padding: 0 40px;
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+
+  .hero {
+    height: 430px;
+  }
+
+  .hero-inner {
+    max-width: 900px;
+    margin: auto;
+    padding-left: 50px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .booking-page {
+    padding-top: 65px;
+  }
+
+  .booking-card {
+    max-width: 430px;
+    padding: 25px;
+  }
+.review-link {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #008f83;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+}
+  .reviews-intro h1 {
+    font-size: 40px;
+  }
+}

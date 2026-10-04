@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelGuide - Reviews</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar reviews-topbar">
+  <a class="logo" href="index.html">Travel<span>Guide</span></a>
+</header>
+
+<main class="reviews-page">
+  <section class="reviews-intro">
+    <h1>Customer Reviews</h1>
+    <p>Share your experience with our tourist guide<br>service.</p>
+  </section>
+
+  <section class="review-form">
+    <h2>Write a Review</h2>
+    <input id="reviewName" type="text" placeholder="Your name">
+
+    <div class="stars" aria-label="Choose rating">
+      <button type="button" data-rating="1">★</button>
+      <button type="button" data-rating="2">★</button>
+      <button type="button" data-rating="3">★</button>
+      <button type="button" data-rating="4">★</button>
+      <button type="button" data-rating="5">★</button>
+    </div>
+
+    <textarea id="reviewText" placeholder="Tell us about your experience..."></textarea>
+    <button id="submitReview" class="submit-review" type="button">Submit Review</button>
+  </section>
+
+  <section id="reviewsList" class="reviews-list">
+    <article class="review-card">
+      <div class="review-head"><strong>Arun</strong><span>★★★★★</span></div>
+      <p>The guide was very friendly and explained everything clearly. We had a great experience!</p>
+    </article>
+
+    <article class="review-card">
+      <div class="review-head"><strong>Priya</strong><span>★★★★★</span></div>
+      <p>Very comfortable tour and excellent guidance throughout the trip.</p>
+    </article>
+  </section>
+
+  <section class="about">
+    <h2>About Our Guide Service</h2>
+    <p>Enjoy a comfortable and informative 4-hour<br>guided tour with our professional tourist guide.</p>
+    <p>Each slot allows a maximum of 20 people.</p>
+  </section>
+</main>
+
+<script>
+let selectedRating = 0;
+
+document.querySelectorAll('.stars button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    selectedRating = Number(btn.dataset.rating);
+    document.querySelectorAll('.stars button').forEach((star, i) => {
+      star.classList.toggle('selected', i < selectedRating);
+    });
+  });
+});
+
+document.getElementById('submitReview').addEventListener('click', () => {
+  const name = document.getElementById('reviewName').value.trim();
+  const text = document.getElementById('reviewText').value.trim();
+
+  if (!name || !text || !selectedRating) {
+    alert('Please enter your name, review and rating.');
+    return;
+  }
+
+  const card = document.createElement('article');
+  card.className = 'review-card';
+  card.innerHTML = `
+    <div class="review-head">
+      <strong>${escapeHTML(name)}</strong>
+      <span>${'★'.repeat(selectedRating)}${'★'.repeat(5-selectedRating)}</span>
+    </div>
+    <p>${escapeHTML(text)}</p>
+  `;
+  document.getElementById('reviewsList').prepend(card);
+
+  document.getElementById('reviewName').value = '';
+  document.getElementById('reviewText').value = '';
+  selectedRating = 0;
+  document.querySelectorAll('.stars button').forEach(s => s.classList.remove('selected'));
+});
+
+function escapeHTML(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+</script>
+</body>
+</html>

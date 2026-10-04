@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelGuide - Book a Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="logo" href="index.html">Travel<span>Guide</span></a>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Explore. Discover.<br>Experience.</h1>
+    <p>Book a professional tourist guide and<br>explore amazing places with ease.</p>
+    <a href="#booking" class="orange-btn">Book a Guide</a>
+  </div>
+</section>
+
+<main id="booking" class="booking-page">
+  <h2>Book Your Tourist<br>Guide</h2>
+  <p class="subtitle">Choose your date and preferred 4-hour guide<br>slot.</p>
+
+  <section class="booking-card">
+    <h3>Your Details</h3>
+
+    <label for="name">Full Name</label>
+    <input id="name" type="text" placeholder="Enter your name">
+
+    <label for="phone">Phone Number</label>
+    <input id="phone" type="tel" placeholder="Enter phone number">
+
+    <label for="date">Select Date</label>
+    <input id="date" type="date">
+
+    <h3 class="slot-heading">Select Guide Slot</h3>
+
+    <button class="slot-card" data-slot="Morning Slot" data-time="9:00 AM – 1:00 PM" type="button">
+      <strong>🌅 Morning Slot</strong>
+      <span>9:00 AM – 1:00 PM</span>
+      <span>◷ 4 Hours</span>
+      <span>💰 ₹600 / Person</span>
+      <b>20</b>
+      <small>Seats Available</small>
+    </button>
+
+    <button class="slot-card" data-slot="Evening Slot" data-time="2:00 PM – 6:00 PM" type="button">
+      <strong>🌇 Evening Slot</strong>
+      <span>2:00 PM – 6:00 PM</span>
+      <span>◷ 4 Hours</span>
+      <span>💰 ₹600 / Person</span>
+      <b>20</b>
+      <small>Seats Available</small>
+    </button>
+
+    <div class="people-row">
+      <label>Number of People</label>
+      <div class="counter">
+        <button type="button" id="minus">−</button>
+        <span id="people">1</span>
+        <button type="button" id="plus">+</button>
+      </div>
+    </div>
+
+    <div class="summary">
+      <h3>Booking Summary</h3>
+      <div><span>Guide Slot</span><strong id="summarySlot">Not selected</strong></div>
+      <div><span>Duration</span><strong id="summaryDuration">-</strong></div>
+      <div><span>People</span><strong id="summaryPeople">1</strong></div>
+      <div class="total"><span>Total Amount</span><strong id="total">₹600</strong></div>
+      <button class="confirm" type="button" id="confirm">Confirm Booking</button>
+    <a href="reviews.html" class="review-link">
+  Customer Reviews
+</a>
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
